@@ -74,12 +74,14 @@ ID = 30
 
 The search returns the first matching record according to the program's sorting and duplicate-handling logic.
 
-## Team
+## 👥 Team Members
 
-| 1 | Vaishnavi Waghmare |
-| 2 | [Team Member 2] | 
-| 3 | [Team Member 3] | 
-| 4 | [Team Member 4] | 
+| Sr. No. | Name | Roll No. |
+|--------:|------|----------|
+| 1 | **Vaishnavi Waghmare** | **25102A0024** |
+| 2 | **Shreeya Tendolkar** | **25102A0016** |
+| 3 | **Gayatri Gawari** | **25102A0021** |
+| 4 | **Diksha Pawar** | **25102A0011** |
 
 ## Project Structure
 
