@@ -76,8 +76,6 @@ The search returns the first matching record according to the program's sorting 
 
 ## Team
 
-| Sr. No. | Team Member 
-|---|---|---|
 | 1 | Vaishnavi Waghmare |
 | 2 | [Team Member 2] | 
 | 3 | [Team Member 3] | 
