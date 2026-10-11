@@ -1,67 +1,78 @@
 # Smart Record Searching System using Binary Search
 
-## Overview
+A menu-driven C program developed as an **Analysis of Algorithms (AOA) mini project** based on the **Divide and Conquer** technique.
 
-The Smart Record Searching System is an AOA mini-project based on the
-Divide and Conquer technique.
+The system stores student records, creates a sorted copy of the records, and performs **Iterative Binary Search** and **Recursive Binary Search**. It also compares Binary Search with Linear Search.
 
-The system stores records, sorts them when required, and demonstrates
-Iterative Binary Search, Recursive Binary Search, and Linear Search.
+---
 
 ## Features
 
-- Add records in unsorted order
-- Display original records
-- Create and display a sorted copy
+- Add student records
+- Display records in original input order
+- Create a sorted copy of records using Insertion Sort
 - Iterative Binary Search
 - Recursive Binary Search
 - Linear Search
 - Display `low`, `high`, and `mid` during Binary Search
-- Count comparisons
-- Handle duplicate records
+- Count the number of comparisons
+- Handle duplicate IDs
+- Return the first occurrence of duplicate IDs
 - Compare Binary Search with Linear Search
-- Built-in test cases
+- Load predefined unsorted sample records
+- Run 10 built-in test cases
+- Clear all records
+
+---
 
 ## Algorithms Used
 
-### 1. Insertion Sort
-Used to prepare a sorted copy of the records before applying Binary Search.
+### Insertion Sort
 
-**Time Complexity:** O(n²)
+Used to sort the records by student ID before performing Binary Search.
 
-### 2. Iterative Binary Search
-Searches for a record by repeatedly dividing the search interval into two halves.
+- Best Case: `O(n)`
+- Average Case: `O(n²)`
+- Worst Case: `O(n²)`
 
-**Time Complexity:** O(log n)
+### Iterative Binary Search
 
-### 3. Recursive Binary Search
+Searches the sorted records by repeatedly reducing the search interval by half.
+
+- Best Case: `O(1)`
+- Average Case: `O(log n)`
+- Worst Case: `O(log n)`
+- Space Complexity: `O(1)`
+
+### Recursive Binary Search
+
 Uses recursion to divide the search interval into smaller halves.
 
-**Time Complexity:** O(log n)
+- Best Case: `O(1)`
+- Average Case: `O(log n)`
+- Worst Case: `O(log n)`
+- Space Complexity: `O(log n)`
 
-### 4. Linear Search
-Checks records sequentially until the required record is found.
+### Linear Search
 
-**Time Complexity:** O(n)
+Searches records sequentially from the beginning until the required ID is found.
 
-## Technologies Used
+- Best Case: `O(1)`
+- Average Case: `O(n)`
+- Worst Case: `O(n)`
 
-- C
-- GCC Compiler
-- Git
-- GitHub
+---
 
-## Project Structure
+## Duplicate Records
+
+The program supports duplicate student IDs.
+
+When duplicate IDs are present, the **first occurrence** is returned.
+
+Example:
 
 ```text
-Smart-record-searching-system/
-│
-├── docs/
-│   ├── report.pdf
-│   └── output/
-│
-├── src/
-│   └── main.c
-│
-├── .gitignore
-└── README.md
+ID = 30
+
+30  Chetan
+30  Chetan2
