@@ -1,1 +1,176 @@
-erf4rfrf
+============================================================
+        SMART RECORD SEARCHING SYSTEM USING BINARY SEARCH
+============================================================
+
+MENU
+
+======= SMART RECORD SEARCHING SYSTEM =======
+ 1. Add records
+ 2. Display records
+ 3. Show sorted copy
+ 4. Binary search - Iterative
+ 5. Binary search - Recursive
+ 6. Compare Binary vs Linear search
+ 7. Load unsorted sample data
+ 8. Run test cases
+ 9. Clear all records
+ 0. Exit
+Enter choice: 7
+
+9 UNSORTED sample records loaded (ID 30 is duplicated).
+
+
+------------------------------------------------------------
+OPTION 2: DISPLAY ORIGINAL RECORDS
+------------------------------------------------------------
+
+ORIGINAL INPUT ORDER:
+Index  ID     Name                 Marks
+------------------------------------------------
+0      40     Dev                  71.00
+1      10     Asha                 88.50
+2      70     Gita                 64.00
+3      20     Bala                 92.00
+4      50     Esha                 55.50
+5      30     Chetan               77.00
+6      60     Farid                83.00
+7      30     Chetan2              69.00
+8      80     Hari                 90.00
+
+
+------------------------------------------------------------
+OPTION 3: SHOW SORTED COPY
+------------------------------------------------------------
+
+[Binary search needs sorted data -> insertion sort applied on a copy;
+ original input order unchanged]
+
+SORTED COPY (original input is unchanged):
+Index  ID     Name                 Marks
+------------------------------------------------
+0      10     Asha                 88.50
+1      20     Bala                 92.00
+2      30     Chetan               77.00
+3      30     Chetan2              69.00
+4      40     Dev                  71.00
+5      50     Esha                 55.50
+6      60     Farid                83.00
+7      70     Gita                 64.00
+8      80     Hari                 90.00
+
+
+------------------------------------------------------------
+OPTION 4: ITERATIVE BINARY SEARCH
+------------------------------------------------------------
+
+Enter ID to search: 50
+
+[Binary search needs sorted data -> insertion sort applied on a copy;
+ original input order unchanged]
+
+Iterative Binary Search trace (on sorted copy):
+  Step 1 : low=0  high=8  mid=4  (ID at mid = 40)
+  Step 2 : low=5  high=8  mid=6  (ID at mid = 60)
+  Step 3 : low=5  high=5  mid=5  (ID at mid = 50)
+
+Result : FOUND at index 5 -> ID=50, Name=Esha, Marks=55.50 | comparisons = 3
+(For duplicate IDs, the first occurrence is returned.)
+
+
+------------------------------------------------------------
+OPTION 5: RECURSIVE BINARY SEARCH
+------------------------------------------------------------
+
+Enter ID to search: 70
+
+[Binary search needs sorted data -> insertion sort applied on a copy;
+ original input order unchanged]
+
+Recursive Binary Search trace (on sorted copy):
+  Call 1 : low=0  high=8  mid=4  (ID at mid = 40)
+  Call 2 : low=5  high=8  mid=6  (ID at mid = 60)
+  Call 3 : low=7  high=8  mid=7  (ID at mid = 70)
+  Call 4 : low=7  high=6  -> range empty
+
+Result : FOUND at index 7 -> ID=70, Name=Gita, Marks=64.00 | comparisons = 3
+(For duplicate IDs, the first occurrence is returned.)
+
+
+------------------------------------------------------------
+OPTION 6: COMPARE BINARY SEARCH WITH LINEAR SEARCH
+------------------------------------------------------------
+
+Enter ID to search: 80
+
+--- Comparison for ID 80 (n = 9 records) ---
+
+Binary (iterative) [sorted copy] : FOUND at index 8 -> ID=80, Name=Hari, Marks=90.00 | comparisons = 4
+
+Binary (recursive) [sorted copy] : FOUND at index 8 -> ID=80, Name=Hari, Marks=90.00 | comparisons = 4
+
+Linear search      [original   ] : FOUND at index 8 -> ID=80, Name=Hari, Marks=90.00 | comparisons = 9
+
+(Index shown is the position in the array that was searched.)
+
+
+------------------------------------------------------------
+SEARCH FOR ABSENT ID
+------------------------------------------------------------
+
+Enter ID to search: 55
+
+Iterative Binary Search trace (on sorted copy):
+  Step 1 : low=0  high=8  mid=4  (ID at mid = 40)
+  Step 2 : low=5  high=8  mid=6  (ID at mid = 60)
+  Step 3 : low=5  high=5  mid=5  (ID at mid = 50)
+
+Result : NOT FOUND | comparisons = 3
+
+
+------------------------------------------------------------
+DUPLICATE ID TEST
+------------------------------------------------------------
+
+Enter ID to search: 30
+
+Sorted records contain:
+
+Index  ID     Name
+--------------------------
+2      30     Chetan
+3      30     Chetan2
+
+Result:
+The first occurrence of duplicate ID 30 is returned.
+
+Result : FOUND at index 2 -> ID=30, Name=Chetan, Marks=77.00
+
+(For duplicate IDs, the first occurrence is returned.)
+
+
+------------------------------------------------------------
+OPTION 8: TEST CASES
+------------------------------------------------------------
+
+================ TEST SUITE ================
+No  Test case                Key   Expected Iter     Recur    Result
+----------------------------------------------------------------------
+1   First element            10    0        0        0        PASS
+2   Middle element           30    2        2        2        PASS
+3   Last element             50    4        4        4        PASS
+4   Absent key               35    -1       -1       -1       PASS
+5   Single item - present    42    0        0        0        PASS
+6   Single item - absent     7     -1       -1       -1       PASS
+7   Duplicates (first idx)   30    2        2        2        PASS
+8   Empty list               5     -1       -1       -1       PASS
+9   Even number of items     6     2        2        2        PASS
+10  Reverse-sorted input     1     0        0        0        PASS
+----------------------------------------------------------------------
+Passed 10 / 10 test cases.
+
+
+------------------------------------------------------------
+OPTION 0: EXIT
+------------------------------------------------------------
+
+Goodbye!
